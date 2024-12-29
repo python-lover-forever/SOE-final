@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض الكاميرا مع صورة متحركة</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* شاشة الكاميرا كاملة */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0; /* خلفية الكاميرا */
+        }
+
+        /* صورة متحركة في الزاوية السفلى اليمنى */
+        #background-gif {
+            position: absolute;
+            bottom: 10px; /* تعديل الهامش السفلي */
+            right: 10px;  /* تعديل الهامش الأيمن */
+            width: 700px; /* حجم الصورة المتحركة */
+            height: auto;
+            z-index: 1; /* الصورة المتحركة فوق الكاميرا */
+        }
+    </style>
+</head>
+<body>
+
+<!-- صورة متحركة في الزاوية السفلى اليمنى -->
+<img id="background-gif" src="static/Untitled-design-2--unscreen.gif" alt="خلفية متحركة">
+
+<!-- عرض الكاميرا (عنصر الفيديو) -->
+<video id="camera-feed" autoplay muted></video>
+
+<script>
+    // وظيفة الوصول إلى الكاميرا وعرضها
+    async function startCamera() {
+        try {
+            // الوصول إلى كاميرا المستخدم
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const videoElement = document.getElementById('camera-feed');
+            videoElement.srcObject = stream;
+        } catch (err) {
+            console.error("خطأ في الوصول إلى الكاميرا: ", err);
+        }
+    }
+
+    // بدء تشغيل الكاميرا عند تحميل الصفحة
+    window.onload = startCamera;
+</script>
+
+</body>
+</html>

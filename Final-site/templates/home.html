@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية - إنقاذ بيئتنا</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://i.postimg.cc/xjZ05WFC/bg-2.jpg");
+            height: 100vh;
+            margin: 0;
+            direction: rtl;
+            display: flex;
+            flex-direction: column;
+        }
+        .topbar {
+            width: 100%;
+            border: 2px solid #414242a2;
+            background-color: #6f726fa2;
+            border-radius: 2px;
+            backdrop-filter: blur(5px);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .topbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        .topbar a:hover {
+            background-color: #00796b;
+            border-radius: 5px;
+        }
+        .container {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .bordered-label {
+            border: 2px solid #000;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #aeffbc;
+        }
+        footer {
+            backdrop-filter: blur(9px);
+            background-color: #abf5d046;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        footer img {
+            border: 2px solid #414242a2;
+            background-color: #6f726f94;
+            padding: 10px;
+            border-radius: 2px;
+            height: 300px;
+            width: 380px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <a href="home.html" onclick="showPage('home')">الرئيسية</a>
+        <a href="login.html" onclick="showPage('login')">تسجيل الدخول</a>
+        <a href="signup.html" onclick="showPage('signup')">إنشاء حساب</a>
+        <a href="tips.html" onclick="showPage('tips')">نصائح يومية</a>
+        <a href="ar.html" onclick="showPage('ar')">اكتشف الواقع المعزز</a>
+    </div>
+    <div class="container" id="home">
+        <h3>مرحبًا بكم في منصة إنقاذ بيئتنا (SOE)</h3>
+        <div class="bordered-label">
+            <label>
+                في SOE، نحن ملتزمون بإلهام الأفراد وتمكينهم لإحداث تأثير إيجابي على البيئة. تقدم منصتنا:
+                <ul>
+                    <li>نصائح يومية بيئية: خطوات بسيطة وقابلة للتنفيذ لعيش حياة مستدامة.</li>
+                    <li>تتبع التأثير البيئي: راقب تقدمك وساهم في عالم أكثر خضرة.</li>
+                    <li>التفاعل المجتمعي: انضم إلى أفراد يشاركونك الالتزام بحماية كوكبنا.</li>
+                </ul>
+                معًا، لنخلق مستقبلًا أنظف وأكثر استدامة! 🌿
+            </label>
+        </div>
+    </div>
+    <footer>
+        <img src="static/Save Our Enviroment.png" alt="شعار SOE">
+    </footer>
+    
+    <script>
+        function showPage(page) {
+            alert('تم اختيار الصفحة: ' + page);
+        }
+    </script>
+</body>
+</html>
